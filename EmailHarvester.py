@@ -134,8 +134,9 @@ class EmailHarvester(object):
                 r=requests.get(urly, headers=headers)
                 
         except Exception as e:
+            print("Error in engine: " % self.activeEngine)
             print(e)
-            sys.exit(4)
+            pass
 
         if r.encoding is None:
 	          r.encoding = 'UTF-8'
